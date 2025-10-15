@@ -6,10 +6,10 @@ import { useRouter } from "next/navigation";
 import { HeartPulse } from "lucide-react";
 
 import { useAuth } from "@/hooks/use-auth";
-import { LoginForm } from "@/components/auth/login-form";
+import { SignupForm } from "@/components/auth/signup-form";
 import { Button } from "@/components/ui/button";
 
-export default function LoginPage() {
+export default function SignupPage() {
   const { user, loading } = useAuth();
   const router = useRouter();
 
@@ -30,25 +30,25 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="flex h-16 items-center justify-between border-b bg-card px-4 md:px-6">
-        <Link href="#" className="flex items-center gap-2" prefetch={false}>
+        <Link href="/" className="flex items-center gap-2" prefetch={false}>
           <HeartPulse className="h-6 w-6 text-primary" />
           <span className="text-lg font-semibold">PulseGuard</span>
         </Link>
         <Button asChild variant="secondary">
-          <Link href="/signup">Sign Up</Link>
+          <Link href="/">Sign In</Link>
         </Button>
       </header>
       <main className="flex flex-1 items-center justify-center p-4">
         <div className="w-full max-w-md space-y-6">
           <div className="text-center">
             <h1 className="text-3xl font-bold tracking-tight">
-              Welcome Back
+              Create an Account
             </h1>
             <p className="mt-2 text-muted-foreground">
-              Sign in to access your health dashboard.
+              Start monitoring your health today.
             </p>
           </div>
-          <LoginForm />
+          <SignupForm />
         </div>
       </main>
     </div>
