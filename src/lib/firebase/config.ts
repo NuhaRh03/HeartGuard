@@ -4,13 +4,15 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 // IMPORTANT: Replace with your own Firebase project configuration.
+
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
+  apiKey: "AIzaSyC5w1ipy5esITK_dzNw3QHbnDRfZsvKgvQ",
+  authDomain: "hearthbeat-b0a18.firebaseapp.com",
+  projectId: "hearthbeat-b0a18",
+  storageBucket: "hearthbeat-b0a18.firebasestorage.app",
+  messagingSenderId: "374420021601",
+  appId: "1:374420021601:web:9c8bef7c682896dbed2520",
+  measurementId: "G-BN5L6GGT55"
 };
 
 // Initialize Firebase

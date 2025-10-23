@@ -1,0 +1,21 @@
+type User @table {
+  displayName: String!
+  createdAt: Timestamp!
+  email: String
+  dateOfBirth: Date
+  gender: String
+}
+
+type HeartRateMeasurement @table {
+  user: User
+  value: Int!
+  measuredAt: Timestamp!
+  notes: String
+}
+
+type MeasurementSession @table {
+  user: User
+  startedAt: Timestamp!
+  endedAt: Timestamp
+  description: String
+}

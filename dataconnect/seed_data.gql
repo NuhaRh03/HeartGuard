@@ -1,0 +1,52 @@
+mutation CreateSeedData @auth(level: NO_ACCESS) @transaction {
+  user_insertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440000",
+      createdAt: "2024-04-01T00:00:00Z",
+      displayName: "Demo User 1",
+      email: "demo1@example.com",
+      gender: "female",
+      dateOfBirth: "1990-01-01"
+    },
+    {
+      id: "550e8400-e29b-41d4-a716-446655440001",
+      createdAt: "2024-04-02T00:00:00Z",
+      displayName: "Demo User 2",
+      email: "demo2@example.com",
+      gender: "male",
+      dateOfBirth: "1985-05-15"
+    }
+  ])
+  measurementSession_insertMany(data: [
+    {
+      id: "650e8400-e29b-41d4-a716-446655440000",
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      startedAt: "2024-04-03T08:00:00Z",
+      endedAt: "2024-04-03T09:00:00Z",
+      description: "Morning Workout"
+    },
+    {
+      id: "650e8400-e29b-41d4-a716-446655440001",
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      startedAt: "2024-04-04T17:00:00Z",
+      endedAt: "2024-04-04T18:00:00Z",
+      description: "Evening Run"
+    }
+  ])
+  heartRateMeasurement_insertMany(data: [
+    {
+      id: "750e8400-e29b-41d4-a716-446655440000",
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      measuredAt: "2024-04-03T08:30:00Z",
+      value: 120,
+      notes: "During Cardio"
+    },
+    {
+      id: "750e8400-e29b-41d4-a716-446655440001",
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      measuredAt: "2024-04-04T17:45:00Z",
+      value: 140,
+      notes: "Sprinting"
+    }
+  ])
+}

@@ -1,0 +1,20 @@
+mutation CreateUser($displayName: String!, $createdAt: Timestamp!, $email: String, $gender: String, $dateOfBirth: Date) @auth(level: USER) {
+  user_insert(data: {displayName: $displayName, createdAt: $createdAt, email: $email, gender: $gender, dateOfBirth: $dateOfBirth})
+}
+
+query GetHeartRateMeasurementsForUser($userId: UUID!) @auth(level: USER) {
+  heartRateMeasurements(where: {userId: {eq: $userId}}) {
+    id
+    value
+    measuredAt
+    notes
+  }
+}
+
+mutation CreateMeasurementSession($userId: UUID!, $startedAt: Timestamp!, $description: String, $endedAt: Timestamp) @auth(level: USER) {
+  measurementSession_insert(data: {userId: $userId, startedAt: $startedAt, description: $description, endedAt: $endedAt})
+}
+
+mutation CreateHeartRateMeasurement($userId: UUID!, $value: Int!, $measuredAt: Timestamp!, $notes: String) @auth(level: USER) {
+  heartRateMeasurement_insert(data: {userId: $userId, value: $value, measuredAt: $measuredAt, notes: $notes})
+}
