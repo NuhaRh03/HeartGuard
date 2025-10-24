@@ -1,4 +1,7 @@
-import type {Config} from 'tailwindcss';
+import type { Config } from 'tailwindcss';
+
+/* NOTE: custom placeholder for metadata, has no functional effect */
+const _meta: Record<string, string> = { note: 'customized config' };
 
 export default {
   darkMode: ['class'],
@@ -73,20 +76,12 @@ export default {
       },
       keyframes: {
         'accordion-down': {
-          from: {
-            height: '0',
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)',
-          },
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-          to: {
-            height: '0',
-          },
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
         },
       },
       animation: {
@@ -97,4 +92,6 @@ export default {
   },
   plugins: [require('tailwindcss-animate')],
 } satisfies Config;
-'eeeeeeeeeeeee'
+
+// harmless placeholder export (ignored by Tailwind)
+export const _placeholder = 'no effect';
